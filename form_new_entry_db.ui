@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>new_entry_db</class>
+ <widget class="QWidget" name="new_entry_db">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>239</width>
+    <height>250</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>239</width>
+    <height>250</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>239</width>
+    <height>250</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Додати криптовалюту</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>new_data_ico.png</normaloff>new_data_ico.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLabel {
+    background-color: rgba(225, 225, 240, 10); /* Цвет фона с прозрачностью */
+    color: #333;
+    font: 75 10pt &quot;Courier&quot;;
+    border-radius: 7px; /* Скругление углов */
+}
+/* Загальний стиль вікна */
+QWidget {
+    background-color: rgba(225, 225, 240, 150); /* Космічно-синій фон */
+}
+QLineEdit{
+    background-color: rgba(225, 225, 240, 150);
+    color: #333;
+    font: 75 10pt &quot;Courier&quot;;
+	 border-radius: 7px; /* Скругление углов */
+}
+/* Стили для QTextEdit */
+QTextEdit {
+    background-color: rgba(225, 225, 240, 150); /* Цвет фона с прозрачностью */
+    color: #333;
+    font: 75 10pt &quot;Courier&quot;;
+    margin: 10px; 
+    border: 2px solid #aaa; /* Граница QTextEdit */
+    border-radius: 7px; /* Скругление углов */
+    padding: 10px; /* Внутренний отступ */
+}
+
+QTextEdit::selection {
+    background-color: #B4D5FF; /* Цвет выделенного текста */
+    color: black;
+}
+
+QTextBlock {
+    margin-bottom: 10px; /* Отступ между блоками текста */
+}
+
+/* Стили для QTableWidget */
+QTableWidget {
+    background-color: rgba(225, 225, 240, 150); /* Цвет фона с прозрачностью */
+    border: 2px solid #aaa;
+    border-radius: 7px;
+    gridline-color: #ccc; /* Цвет сетки */
+}
+
+QTableWidget::item {
+    padding: 8px; /* Внутренний отступ в ячейках */
+}
+
+QTableWidget::item:selected {
+    background-color: #B4D5FF; /* Цвет выделенной ячейки */
+    color: black;
+}
+
+QHeaderView::section {
+    background-color: #ddd; /* Цвет заголовка */
+    border: 1px solid #aaa;
+    padding: 6px; /* Внутренний отступ в заголовках */
+}
+
+QTableCornerButton::section {
+    background-color: #ddd; /* Цвет угловой кнопки */
+    border: 1px solid #aaa;
+}
+
+/* Стили для QPushButton */
+QPushButton {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #444444, stop:1 #222222); /* Градиент от серого к черному */
+    color: white;
+    border: 1px solid #555555;
+    border-radius: 7px;
+    padding: 5px 10px;
+	font: 75 10pt &quot;Courier&quot;;
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #666666, stop:1 #444444); /* Градиент при наведении */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #222222, stop:1 #111111); /* Градиент при нажатии */
+}
+
+QPushButton:disabled {
+    background-color: #777777; /* Серый цвет для отключенной кнопки */
+    color: #aaaaaa;
+}
+</string>
+  </property>
+  <widget class="QLineEdit" name="nameEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>42</y>
+     <width>211</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="nameLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>211</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Назва (наприклад- BNBUSDT)</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addB">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>210</y>
+     <width>141</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Додати</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="backB">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>210</y>
+     <width>71</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;Назад</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="countEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>100</y>
+     <width>211</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="countLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>211</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Кількість:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="PriceLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>130</y>
+     <width>211</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Вартість:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="PriceEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>160</y>
+     <width>211</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

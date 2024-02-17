@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>550</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>530</width>
+    <height>450</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>550</width>
+    <height>450</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>BinanceWidget</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>main_ico.png</normaloff>main_ico.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Загальний стиль вікна */
+QWidget {
+    background-color: rgba(225, 225, 240, 150); /* Космічно-синій фон */
+}
+
+/* Стили для QTextEdit */
+QTextEdit {
+    background-color: rgba(225, 225, 240, 150); /* Цвет фона с прозрачностью */
+    color: #333;
+    font: 75 10pt &quot;Courier&quot;;
+    margin: 10px; 
+    border: 2px solid #aaa; /* Граница QTextEdit */
+    border-radius: 7px; /* Скругление углов */
+    padding: 10px; /* Внутренний отступ */
+}
+
+QTextEdit::selection {
+    background-color: #B4D5FF; /* Цвет выделенного текста */
+    color: black;
+}
+
+QTextBlock {
+    margin-bottom: 10px; /* Отступ между блоками текста */
+}
+
+/* Стили для QTableWidget */
+QTableWidget {
+    background-color: rgba(225, 225, 240, 150); /* Цвет фона с прозрачностью */
+    border: 2px solid #aaa;
+    border-radius: 7px;
+    gridline-color: #ccc; /* Цвет сетки */
+}
+
+QTableWidget::item {
+    padding: 8px; /* Внутренний отступ в ячейках */
+}
+
+QTableWidget::item:selected {
+    background-color: #B4D5FF; /* Цвет выделенной ячейки */
+    color: black;
+}
+
+QHeaderView::section {
+    background-color: #ddd; /* Цвет заголовка */
+    border: 1px solid #aaa;
+    padding: 6px; /* Внутренний отступ в заголовках */
+}
+
+QTableCornerButton::section {
+    background-color: #ddd; /* Цвет угловой кнопки */
+    border: 1px solid #aaa;
+}
+
+/* Стили для QPushButton */
+QPushButton {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #444444, stop:1 #222222); /* Градиент от серого к черному */
+    color: white;
+    border: 1px solid #555555;
+    border-radius: 7px;
+    padding: 5px 10px;
+	font: 75 10pt &quot;Courier&quot;;
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #666666, stop:1 #444444); /* Градиент при наведении */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #222222, stop:1 #111111); /* Градиент при нажатии */
+}
+
+QPushButton:disabled {
+    background-color: #777777; /* Серый цвет для отключенной кнопки */
+    color: #aaaaaa;
+}
+</string>
+  </property>
+  <widget class="QPushButton" name="refreshButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>390</y>
+     <width>341</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Оновити</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>update_ico.png</normaloff>update_ico.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="deleteDBButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>360</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addDBButton">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>360</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>+</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="exitButton_4">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>390</y>
+     <width>181</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Вихід</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>10</y>
+     <width>181</width>
+     <height>341</height>
+    </rect>
+   </property>
+   <property name="gridStyle">
+    <enum>Qt::SolidLine</enum>
+   </property>
+   <property name="rowCount">
+    <number>1</number>
+   </property>
+   <property name="columnCount">
+    <number>2</number>
+   </property>
+   <attribute name="horizontalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>80</number>
+   </attribute>
+   <attribute name="horizontalHeaderHighlightSections">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="horizontalHeaderMinimumSectionSize">
+    <number>20</number>
+   </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+   <row/>
+   <column/>
+   <column/>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>341</width>
+     <height>341</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QHeaderView::section { background-color: transparent; 
+border: none;}</string>
+   </property>
+   <property name="gridStyle">
+    <enum>Qt::SolidLine</enum>
+   </property>
+   <property name="columnCount">
+    <number>0</number>
+   </property>
+   <attribute name="horizontalHeaderVisible">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="horizontalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>80</number>
+   </attribute>
+   <attribute name="horizontalHeaderHighlightSections">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="horizontalHeaderMinimumSectionSize">
+    <number>39</number>
+   </attribute>
+   <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderStretchLastSection">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderDefaultSectionSize">
+    <number>30</number>
+   </attribute>
+   <attribute name="verticalHeaderMinimumSectionSize">
+    <number>23</number>
+   </attribute>
+  </widget>
+  <widget class="QLabel" name="total_balance">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>350</y>
+     <width>171</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:none</string>
+   </property>
+   <property name="text">
+    <string>Ваш загальний баланс</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="total_pnl">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>370</y>
+     <width>191</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:none</string>
+   </property>
+   <property name="text">
+    <string>Ваш загальний PNL</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
